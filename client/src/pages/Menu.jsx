@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import { TbCurrencyPeso } from "react-icons/tb";
+import { PiBowlFoodFill } from "react-icons/pi";
+import { RiDrinksFill } from "react-icons/ri";
+import { FaWineBottle } from "react-icons/fa";
 
 const foodProduct = [
   {
@@ -6,9 +10,20 @@ const foodProduct = [
     image:
       "https://www.allrecipes.com/thmb/91kDp_3WYGHzsmMkXnDP5s9mBGI=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/35151-traditional-filipino-lumpia-ddmfs-hero-1x2-0745-d25195def74049598ca7cfa057f9d77e.jpg",
     subtitle: "Food",
-    name: "Lumpia",
+    name: "Lumpiang Shanghai",
     description:
       "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 5,
+  },
+  {
+    id: "10",
+    image:
+      "https://www.foodandwine.com/thmb/TkzoOP9qc3ozedMISV4EyCSl0ec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Lumpiang-Sariwa-FT-RECIPE1221-2e7c56c4d0a64bf7a726037279638090.jpg",
+    subtitle: "Food",
+    name: "Lumpiang Sariwa",
+    description:
+      "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 60,
   },
   {
     id: "2",
@@ -18,6 +33,7 @@ const foodProduct = [
     name: "Siomai",
     description:
       "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 4,
   },
   {
     id: "3",
@@ -27,6 +43,7 @@ const foodProduct = [
     name: "Siopao",
     description:
       "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 12,
   },
   {
     id: "4",
@@ -36,6 +53,35 @@ const foodProduct = [
     name: "Fries",
     description:
       "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 20,
+  },
+  {
+    id: "5",
+    image: "https://i.ytimg.com/vi/5QT3ItUFTNQ/maxresdefault.jpg",
+    subtitle: "Food",
+    name: "Ginataang Munggo",
+    description:
+      "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 30,
+  },
+  {
+    id: "6",
+    image: "https://i.ytimg.com/vi/cUgJ5bFezgc/maxresdefault.jpg",
+    subtitle: "Drinks",
+    name: "Gulaman Juice",
+    description:
+      "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 10,
+  },
+  {
+    id: "11",
+    image:
+      "https://static.wixstatic.com/media/6e6d8c_14087fc763a146a5b873d1851f2ae6e1~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+    subtitle: "Alcohol",
+    name: "Red Horse",
+    description:
+      "Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche",
+    price: 90,
   },
 ];
 
@@ -64,8 +110,7 @@ const Menu = () => {
           <div className="flex flex-wrap -m-4 ">
             {foodProduct.map((item) => (
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
+                whileHover={{ scale: 1.1 }}
                 className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
                 key={item.id}>
                 <div className="bg-gray-100 bg-opacity-40 p-6 rounded-lg">
@@ -74,8 +119,23 @@ const Menu = () => {
                     src={item.image}
                     alt={item.name}
                   />
-                  <h3 className=" text-yellow-400 text-s font-semibold title-font ">
-                    {item.subtitle}
+                  <h3 className=" text-warning text-s font-semibold title-font">
+                    {item.subtitle === "Food" ? (
+                      <div className="flex items-center gap-1">
+                        {item.subtitle}
+                        <PiBowlFoodFill />
+                      </div>
+                    ) : item.subtitle === "Drinks" ? (
+                      <div className="flex items-center gap-1">
+                        {item.subtitle}
+                        <RiDrinksFill />
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1">
+                        {item.subtitle}
+                        <FaWineBottle />
+                      </div>
+                    )}
                   </h3>
                   <h2 className="text-lg text-gray-700 font-semibold title-font mb-4">
                     {item.name}
@@ -83,6 +143,15 @@ const Menu = () => {
                   <p className="leading-relaxed text-base">
                     {item.description}
                   </p>
+                  <div className="flex items-center mt-3 text-lg justify-between">
+                    <p className="flex items-center text-gray-800 font-semibold ">
+                      <TbCurrencyPeso className="text-2xl" />
+                      {item.price}
+                    </p>
+                    <button className="btn btn-sm btn-warning">
+                      Add to cart
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}

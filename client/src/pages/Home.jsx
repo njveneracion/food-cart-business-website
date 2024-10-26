@@ -42,7 +42,7 @@ const Home = () => {
               truffaut hexagon try-hard chambray.
             </p>
             <div className="flex justify-center">
-              <button className="btn btn-warning btn-wide font-bold text-lg">
+              <button className="btn btn-warning btn-wide font-bold text-lg text-gray-800">
                 Order Now
               </button>
             </div>
