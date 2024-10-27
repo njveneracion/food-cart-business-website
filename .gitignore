@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build output
+/build/
+dist/
+
+# Environment variables
+.env
+
+# Log files
+logs/
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# React specific
+*.cache/
+*.webpack/
+*.js.map
+
+# Coverage reports
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Miscellaneous
+*.tgz
+*.zip
