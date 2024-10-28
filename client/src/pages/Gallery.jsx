@@ -39,7 +39,7 @@ const Gallery = () => {
           <div className="flex flex-wrap w-1/2">
             <div className="md:p-2 p-1 w-full">
               <video
-                src="../public/sample-video.mp4"
+                src="sample-video.mp4"
                 type="video/mp4"
                 autoPlay
                 loop
@@ -66,7 +66,7 @@ const Gallery = () => {
       </div>
 
       <div className="container px-5 py-24 mx-auto">
-        <h1 classNameName="sm:text-4xl text-3xl font-bold title-font mb-20 text-gray-900 text-center">
+        <h1 className="sm:text-4xl text-3xl font-bold title-font mb-20 text-gray-900 text-center">
           Testimonial
         </h1>
         <div className="flex flex-wrap -m-4">
