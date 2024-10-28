@@ -39,7 +39,7 @@ const Gallery = () => {
           <div className="flex flex-wrap w-1/2">
             <div className="md:p-2 p-1 w-full">
               <video
-                src=""
+                src="../public/sample-video.mp4"
                 type="video/mp4"
                 autoPlay
                 loop
