@@ -1,18 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Sidenav from "./Sidenav";
+import Content from "./Content";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-
-  function logout() {
-    localStorage.removeItem("token");
-    navigate("/");
-  }
-
   return (
-    <div>
-      Dashboard <button onClick={logout}>Logout</button>
-    </div>
+    <section className="flex flex-row">
+      <Sidenav />
+      <div style={{ paddingLeft: "300px" }}>
+        <Content />
+      </div>
+    </section>
   );
 };
 
