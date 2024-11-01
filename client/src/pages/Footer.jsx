@@ -3,7 +3,7 @@ import { MdFastfood } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-gray-100 text-gray-800 p-10">
+    <footer className="footer bg-warning text-gray-800 p-10">
       <aside>
         <MdFastfood className="text-5xl" />
         <p>

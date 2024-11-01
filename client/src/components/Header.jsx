@@ -21,8 +21,8 @@ const Header = () => {
             <a href="#about" className="mr-5 hover:text-gray-900 font-medium">
               About
             </a>
-            <a href="#blog" className="mr-5 hover:text-gray-900 font-medium">
-              Blog
+            <a href="#contact" className="mr-5 hover:text-gray-900 font-medium">
+              Contact
             </a>
           </nav>
           <div className="input input-bordered flex items-center gap-2">
@@ -42,7 +42,9 @@ const Header = () => {
           <IoCartOutline className="mx-5 text-3xl" />
 
           <Link to="/login">
-            <button className="btn btn-warning  text-gray-800"> Sign In</button>
+            <button className="btn btn-warning  text-gray-800 rounded-full">
+              Sign In
+            </button>
           </Link>
         </div>
       </header>

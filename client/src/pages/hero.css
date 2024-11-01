@@ -1,0 +1,10 @@
+.hero {
+    background-image: url("../../public/herobg.jpg");
+    background-size: cover; 
+    background-position: center; 
+    height: calc(100vh - 90px); 
+}
+
+.md-btn{
+    background-color: #FF8C00;
+}

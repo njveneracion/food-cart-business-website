@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { FaAngleUp } from "react-icons/fa";
+import "./hero.css";
 
 const ScrollToTopButton = () => {
   return (
     <Link
-      to="#" // This should match the ID of the section you want to scroll to
-      smooth={true} // Enables smooth scrolling
-      duration={1000} // Duration of the scroll in milliseconds
-      className="btn btn-warning fixed bottom-5 right-5 rounded-full z-10" // Style your button as needed
-    >
+      to="#"
+      smooth={true}
+      duration={1000}
+      className="btn btn-warning fixed bottom-5 right-5 rounded-full z-10">
       <FaAngleUp />
     </Link>
   );
@@ -18,31 +18,24 @@ const ScrollToTopButton = () => {
 const Home = () => {
   return (
     <>
-      <section
-        id="#"
-        className="text-gray-400 body-font  h-[calc(100vh-50px)] pt-32">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://i1.wp.com/www.foodwithmae.com/wp-content/uploads/2020/06/Lumpiang-Sariwa-FoodwithMae-23.jpg?fit=1000%2C667"
-            />
-          </div>
-          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-black">
-              Before they sold out
+      <section id="#" className="hero">
+        <div className="container mx-auto flex px-5 py-24 flex-col items-start">
+          <div className="flex flex-col text-left">
+            <h1 className="title-font sm:text-7xl text-3xl mb-4 font-bold w-2/4 text-black">
+              Satisfy Your Cravings with Our
               <br className="hidden lg:inline-block" />
-              readymade gluten
+              Delicious Meryenda
             </h1>
-            <p className="mb-8 leading-relaxed">
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-              park mlkshk tote bag selvage hot chicken authentic tumeric
-              truffaut hexagon try-hard chambray.
+            <p className="mb-8 leading-relaxed  md:w-1/2 text-gray-900 font-semibold">
+              Indulge in our delightful range of meryenda options, perfect for
+              any time of the day! From savory to sweet, our offerings are made
+              with high-quality ingredients that bring authentic flavors to your
+              palate. Enjoy our handcrafted snacks, whether you're sharing with
+              friends or treating yourself. Elevate your merienda experience and
+              discover your new favorite go-to bites!
             </p>
-            <div className="flex justify-center">
-              <button className="btn btn-warning btn-wide font-bold text-lg text-gray-800">
+            <div>
+              <button className="btn btn-warning btn-wide btn-lg font-bold text-lg text-gray-800 rounded-full md-btn">
                 Order Now
               </button>
             </div>

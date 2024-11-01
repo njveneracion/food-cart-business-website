@@ -24,7 +24,7 @@ const Users = () => {
     <section className="">
       <h1 className="font-bold text-3xl mb-5">Users</h1>
       <div className="border p-10">
-        <table className="table">
+        <table className="table table-xs">
           <thead>
             <tr>
               <th></th>
