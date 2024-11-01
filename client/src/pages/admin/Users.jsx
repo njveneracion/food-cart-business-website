@@ -19,6 +19,7 @@ const Users = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
     <section className="">
       <h1 className="font-bold text-3xl mb-5">Users</h1>
@@ -27,6 +28,12 @@ const Users = () => {
           <thead>
             <tr>
               <th></th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Role</th>
+              <th>Action</th>
               <th>Fullname</th>
               <th>Username</th>
               <th>Email</th>
