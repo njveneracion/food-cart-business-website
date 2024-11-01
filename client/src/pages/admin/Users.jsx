@@ -34,20 +34,13 @@ const Users = () => {
               <th>Password</th>
               <th>Role</th>
               <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
               <tr key={user._id}>
                 <th>{index + 1}</th>
-                <td>{user.personal_information[0]?.fullname}</td>
+                <td>{user.fullname}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>{user.password}</td>

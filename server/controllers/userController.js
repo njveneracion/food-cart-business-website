@@ -10,9 +10,22 @@ const createToken = (_id, role, email) => {
   });
 };
 
+// Creating JWT Token
+const generateRefreshToken = (_id, role, email) => {
+  const payload = { _id, role, email };
+  return jwt.sign(payload, process.env.JWT_SECRET, {
+    expiresIn: "7h",
+  });
+};
+
+function verifyToken(token) {
+  return jwt.verify(token, process.env.JWT_SECRET);
+}
+
 export const registerUser = async (req, res) => {
   try {
-    const { username, email, password, role } = req.body;
+    const { username, email, password, role, fullname, contact_number } =
+      req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -26,14 +39,20 @@ export const registerUser = async (req, res) => {
 
     // Create new user
     const user = new User({
+      fullname,
+      contact_number,
       username,
       email,
       password: hashedPassword,
       role,
     });
-    await user.save();
 
-    res.status(201).json({ message: "User registered successfully" });
+    const savedUser = await user.save();
+    console.log(savedUser);
+
+    res
+      .status(201)
+      .json({ message: "User registered successfully", user: savedUser });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
@@ -57,7 +76,7 @@ export const loginUser = async (req, res) => {
 
     // Create and send token
     const token = createToken(user._id, user.role, user.email);
-    res.json({ message: "Logged in successfully", token });
+    res.json({ user: user, token });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }

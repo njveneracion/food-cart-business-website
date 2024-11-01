@@ -10,22 +10,20 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const userData = { email, password };
+      const userData = { email: email, password: password };
       const data = await loginUser(userData);
 
-      setMessage(data.message);
-      // Optionally, you can save the token in local storage
-      localStorage.setItem("token", data.token);
-
-      navigate("../dashboard");
+      if (data.user._id) {
+        const user = JSON.stringify(data.user);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", user);
+        console.log("logged in successfully");
+        navigate("../dashboard");
+      }
     } catch (error) {
       setMessage(error.response.data.message);
     }
@@ -47,6 +45,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -59,6 +58,7 @@ const Login = () => {
               type="password"
               placeholder="password"
               value={password}
+              name="password"
               onChange={(e) => setPassword(e.target.value)}
               required
               className="grow"
