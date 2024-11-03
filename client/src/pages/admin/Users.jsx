@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { CiViewTable } from "react-icons/ci";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
 
 const API_URL = "http://localhost:5000/api/users";
 
@@ -23,15 +26,14 @@ const Users = () => {
   return (
     <section>
       <h1 className="font-bold text-3xl mb-5">Users</h1>
-      <div className="border p-10">
-        <table className="table table-xs">
+      <div className="border p-2">
+        <table className="table table-sm table-auto">
           <thead>
-            <tr>
-              <th></th>
+            <tr className="bg-warning">
+              <th>#</th>
               <th>Fullname</th>
               <th>Username</th>
               <th>Email</th>
-              <th>Password</th>
               <th>Role</th>
               <th>Action</th>
             </tr>
@@ -43,12 +45,17 @@ const Users = () => {
                 <td>{user.fullname}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
-                <td>{user.password}</td>
                 <td>{user.role}</td>
                 <td>
-                  <button className="btn btn-info btn-sm mx-1">View</button>
-                  <button className="btn btn-warning btn-sm mx-1">Edit</button>
-                  <button className="btn btn-error btn-sm mx-1">Delete</button>
+                  <button className="btn btn-info btn-sm mx-1 text-lg">
+                    <CiViewTable />
+                  </button>
+                  <button className="btn btn-warning btn-sm mx-1 text-lg">
+                    <FaEdit />
+                  </button>
+                  <button className="btn btn-error btn-sm mx-1 text-lg">
+                    <RiDeleteBin5Fill />
+                  </button>
                 </td>
               </tr>
             ))}

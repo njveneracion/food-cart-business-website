@@ -1,7 +1,5 @@
 import React from "react";
 
-const GetProduct = () => {
-  return <div>GetProduct</div>;
-};
+const GetProduct = () => {};
 
 export default GetProduct;

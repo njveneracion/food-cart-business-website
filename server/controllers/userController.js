@@ -10,18 +10,6 @@ const createToken = (_id, role, email) => {
   });
 };
 
-// Creating JWT Token
-const generateRefreshToken = (_id, role, email) => {
-  const payload = { _id, role, email };
-  return jwt.sign(payload, process.env.JWT_SECRET, {
-    expiresIn: "7h",
-  });
-};
-
-function verifyToken(token) {
-  return jwt.verify(token, process.env.JWT_SECRET);
-}
-
 export const registerUser = async (req, res) => {
   try {
     const { username, email, password, role, fullname, contact_number } =
